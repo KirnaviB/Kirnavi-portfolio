@@ -125,7 +125,7 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
-/* FULL WIDTH HEADER LINE (FIXED) */
+/* FULL WIDTH HEADER LINE */
 .section h2::after {
     content: "";
     position: absolute;
@@ -179,7 +179,7 @@ nav a:hover {
     color: var(--brown-soft);
 }
 
-/* ===== SKILLS ===== */
+/* ===== SKILLS (COMMA-SEPARATED, NO LINES) ===== */
 .skill-group {
     margin-bottom: 32px;
 }
@@ -201,14 +201,22 @@ nav a:hover {
     font-weight: 500;
 }
 
-/* add comma after every skill */
+/* commas */
 .chips span::after {
     content: ", ";
 }
 
-/* remove comma after last skill */
 .chips span:last-child::after {
     content: "";
+}
+
+/* 🔥 FORCE REMOVE ANY EXISTING LINES (IMPORTANT) */
+.chips span,
+.chips span::before,
+.chips span::after {
+    border: none !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
 }
 
 /* ===== CONTACT ===== */
