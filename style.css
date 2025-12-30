@@ -153,13 +153,13 @@ nav a:hover::after {
         var(--brown-main),
         transparent
     );
-    margin: 60px 0;
+    margin: 30px 0;
     opacity: 0.5;
 }
 
 /* ===== SECTIONS ===== */
 .section {
-    padding: 90px 10%;
+    padding: 60px 10%;
 }
 
 .section h2 {
