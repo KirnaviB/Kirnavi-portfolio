@@ -58,22 +58,60 @@ nav a {
     margin-left: 20px;
     text-decoration: none;
     font-size: 0.95rem;
+    position: relative;
 }
 
-nav a:hover {
-    color: var(--brown-main);
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--brown-main);
+    transition: width 0.25s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 /* ===== HERO ===== */
 .hero {
-    padding: 90px 10%;
+    padding: 100px 10%;
     text-align: center;
+}
+
+/* HERO ICON VISUALS */
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 2.4rem;
+    color: var(--brown-main);
+    margin-bottom: 25px;
+}
+
+.hero-visual i {
+    opacity: 0.85;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hero-visual i:hover {
+    transform: translateY(-6px);
+    opacity: 1;
 }
 
 .hero h1 {
     font-size: 2.8rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: var(--brown-dark);
+}
+
+.hero-sub {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: var(--brown-soft);
 }
 
 .hero p {
@@ -81,12 +119,6 @@ nav a:hover {
     margin: auto;
     font-size: 1.05rem;
     color: var(--brown-light);
-}
-
-.hero-sub {
-    margin-top: 15px;
-    font-size: 1rem;
-    color: var(--brown-soft);
 }
 
 /* Hero buttons */
@@ -111,9 +143,23 @@ nav a:hover {
     color: #ffffff;
 }
 
+/* ===== SECTION DIVIDER ===== */
+.section-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--brown-main),
+        transparent
+    );
+    margin: 60px 0;
+    opacity: 0.5;
+}
+
 /* ===== SECTIONS ===== */
 .section {
-    padding: 70px 10%;
+    padding: 90px 10%;
 }
 
 .section h2 {
@@ -125,7 +171,6 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
-/* FULL WIDTH HEADER LINE */
 .section h2::after {
     content: "";
     position: absolute;
@@ -137,8 +182,13 @@ nav a:hover {
     border-radius: 2px;
 }
 
+/* Soft gradient section background */
 .dark {
-    background-color: var(--beige-soft);
+    background: linear-gradient(
+        180deg,
+        var(--beige-soft),
+        #f9f4ec
+    );
 }
 
 /* ===== CARDS ===== */
@@ -146,7 +196,7 @@ nav a:hover {
 .project {
     background-color: #ffffff;
     padding: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     border-radius: 12px;
     border: 1px solid #d6c3aa;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -162,6 +212,13 @@ nav a:hover {
 .project h3 {
     color: var(--brown-main);
     margin-bottom: 10px;
+}
+
+/* PROJECT ICON VISUAL */
+.project-icon {
+    font-size: 2.2rem;
+    color: var(--brown-main);
+    margin-bottom: 12px;
 }
 
 .card ul {
@@ -182,6 +239,8 @@ nav a:hover {
 /* ===== SKILLS (COMMA-SEPARATED, NO LINES) ===== */
 .skill-group {
     margin-bottom: 32px;
+    padding-left: 12px;
+    border-left: 3px solid rgba(139, 94, 60, 0.3);
 }
 
 .skill-group h3 {
@@ -210,7 +269,7 @@ nav a:hover {
     content: "";
 }
 
-/* 🔥 FORCE REMOVE ANY EXISTING LINES (IMPORTANT) */
+/* FORCE REMOVE ANY LINES */
 .chips span,
 .chips span::before,
 .chips span::after {
@@ -262,7 +321,11 @@ footer {
     }
 
     .section {
-        padding: 50px 8%;
+        padding: 60px 8%;
+    }
+
+    .hero-visual {
+        font-size: 2rem;
     }
 }
 
