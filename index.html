@@ -8,7 +8,7 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Font Awesome Icons -->
+    <!-- Font Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -26,8 +26,7 @@
 </header>
 
 <!-- HERO -->
-<section class="hero">
-    <!-- HERO VISUAL ICONS -->
+<section class="hero reveal">
     <div class="hero-visual">
         <i class="fas fa-shield-halved"></i>
         <i class="fas fa-network-wired"></i>
@@ -59,7 +58,7 @@
 <div class="section-divider"></div>
 
 <!-- ABOUT -->
-<section id="about" class="section">
+<section id="about" class="section reveal">
     <h2>About Me</h2>
 
     <p>
@@ -83,10 +82,10 @@
 <div class="section-divider"></div>
 
 <!-- EXPERIENCE -->
-<section id="experience" class="section dark">
+<section id="experience" class="section dark reveal">
     <h2>Experience</h2>
 
-    <div class="card">
+    <div class="card reveal">
         <h3>Cybersecurity Intern — Masterly Solutions Pvt. Ltd.</h3>
         <p><strong>Duration:</strong> Jul 2025 – Oct 2025</p>
 
@@ -102,7 +101,7 @@
         </p>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
         <h3>
             Content Head — CESA (Computer Engineering Student Association)<br>
             <span style="font-weight: 500; font-size: 0.95rem; color: #6f4e37;">
@@ -121,75 +120,36 @@
 <div class="section-divider"></div>
 
 <!-- PROJECTS -->
-<section id="projects" class="section">
+<section id="projects" class="section reveal">
     <h2>Projects</h2>
 
-    <div class="project">
-        <div class="project-icon">
-            <i class="fas fa-terminal"></i>
-        </div>
+    <div class="project reveal">
+        <div class="project-icon"><i class="fas fa-terminal"></i></div>
         <h3>SSH Honeypot Intrusion Detection System</h3>
         <p>
             Built a honeypot-based system to observe real-world SSH attack behavior
             in a controlled attacker–defender virtual lab.
-        </p>
-        <p>
-            Captured commands, payloads, and session activity in real time and applied
-            automated defensive responses.
         </p>
         <p class="tools">
             Tools: Python (Flask), Kali Linux, PowerShell, Wireshark, VMware
         </p>
     </div>
 
-    <div class="project">
-        <div class="project-icon">
-            <i class="fas fa-bolt"></i>
-        </div>
+    <div class="project reveal">
+        <div class="project-icon"><i class="fas fa-bolt"></i></div>
         <h3>DoS Attack Simulation & Defense Analysis</h3>
-        <p>
-            Developed a Flask-based server to simulate Denial-of-Service attacks
-            and analyze system performance under high traffic conditions.
-        </p>
-        <p>
-            Implemented CPU usage tracking, latency measurement, rate limiting,
-            and auto-restart mechanisms.
-        </p>
-        <p class="tools">
-            Tools: Python, Flask, Wireshark
-        </p>
+        <p class="tools">Tools: Python, Flask, Wireshark</p>
     </div>
 
-    <div class="project">
-        <div class="project-icon">
-            <i class="fas fa-key"></i>
-        </div>
+    <div class="project reveal">
+        <div class="project-icon"><i class="fas fa-key"></i></div>
         <h3>Brute Force Attack Simulation</h3>
-        <p>
-            Simulated brute-force authentication attacks to study login vulnerabilities
-            and attack patterns.
-        </p>
-        <p>
-            Strengthened authentication security using lockout policies and detailed logging.
-        </p>
-        <p class="tools">
-            Tools: Python, Flask, Bash
-        </p>
+        <p class="tools">Tools: Python, Flask, Bash</p>
     </div>
 
-    <div class="project">
-        <div class="project-icon">
-            <i class="fas fa-chart-line"></i>
-        </div>
+    <div class="project reveal">
+        <div class="project-icon"><i class="fas fa-chart-line"></i></div>
         <h3>Soccer Player Price Prediction (Machine Learning)</h3>
-        <p>
-            Developed a machine learning model to predict soccer player market value
-            using performance and statistical data.
-        </p>
-        <p>
-            Performed data cleaning, preprocessing, feature analysis, visualization,
-            and model comparison using regression techniques.
-        </p>
         <p class="tools">
             Tools: Python, pandas, NumPy, scikit-learn, Matplotlib, Seaborn
         </p>
@@ -199,10 +159,10 @@
 <div class="section-divider"></div>
 
 <!-- SKILLS -->
-<section id="skills" class="section dark">
+<section id="skills" class="section dark reveal">
     <h2>Skills</h2>
 
-    <div class="skill-group">
+    <div class="skill-group reveal">
         <h3>Cybersecurity</h3>
         <div class="chips">
             <span>Kali Linux</span>
@@ -213,7 +173,7 @@
         </div>
     </div>
 
-    <div class="skill-group">
+    <div class="skill-group reveal">
         <h3>AI & Data</h3>
         <div class="chips">
             <span>pandas</span>
@@ -224,7 +184,7 @@
         </div>
     </div>
 
-    <div class="skill-group">
+    <div class="skill-group reveal">
         <h3>Programming & Backend</h3>
         <div class="chips">
             <span>Python</span>
@@ -238,7 +198,7 @@
 <div class="section-divider"></div>
 
 <!-- CONTACT -->
-<section id="contact" class="section">
+<section id="contact" class="section reveal">
     <h2>Contact</h2>
 
     <p>
@@ -264,6 +224,23 @@
 <footer>
     <p>© 2026 Kirnavi Bhavsar</p>
 </footer>
+
+<!-- SCROLL REVEAL SCRIPT -->
+<script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < window.innerHeight - 100) {
+                el.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+</script>
 
 </body>
 </html>
