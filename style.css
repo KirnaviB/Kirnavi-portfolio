@@ -179,34 +179,36 @@ nav a:hover {
     color: var(--brown-soft);
 }
 
-/* ===== SKILLS (IMPROVED – NO LINES, NO BUTTONS) ===== */
+/* ===== SKILLS ===== */
 .skill-group {
-    margin-bottom: 35px;
+    margin-bottom: 32px;
 }
 
 .skill-group h3 {
     font-size: 1.2rem;
     color: var(--brown-light);
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
+    display: block;
+    line-height: 1.8;
 }
 
 .chips span {
     font-size: 0.95rem;
     color: var(--brown-dark);
-    padding-bottom: 4px;
-    border-bottom: 2px solid #d6c3aa;
-    transition: all 0.25s ease;
+    font-weight: 500;
 }
 
-.chips span:hover {
-    color: var(--brown-main);
-    border-color: var(--brown-main);
+/* add comma after every skill */
+.chips span::after {
+    content: ", ";
+}
+
+/* remove comma after last skill */
+.chips span:last-child::after {
+    content: "";
 }
 
 /* ===== CONTACT ===== */
