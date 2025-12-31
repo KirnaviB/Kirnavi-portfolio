@@ -27,14 +27,17 @@
 </header>
 
 <!-- HERO -->
-<section class="hero reveal">
+<section class="hero reveal active">
     <div class="hero-visual">
         <i class="fas fa-shield-halved"></i>
         <i class="fas fa-network-wired"></i>
         <i class="fas fa-brain"></i>
     </div>
 
-    <h1>Security-minded Engineer<br>Exploring AI-Driven & Data-Centric Systems</h1>
+    <h1>
+        Security-minded Engineer<br>
+        Exploring AI-Driven & Data-Centric Systems
+    </h1>
 
     <p>
         Hands-on experience in cybersecurity labs, attack simulation, and system defense,
@@ -59,7 +62,7 @@
 <div class="section-divider"></div>
 
 <!-- ABOUT -->
-<section id="about" class="section reveal">
+<section id="about" class="section reveal delay-1">
     <h2 class="section-title">
         <i class="fas fa-user-shield"></i>
         About Me
@@ -92,7 +95,7 @@
         Experience
     </h2>
 
-    <div class="card reveal">
+    <div class="card reveal delay-1">
         <h3>Cybersecurity Intern — Masterly Solutions Pvt. Ltd.</h3>
         <p><strong>Duration:</strong> Jul 2025 – Oct 2025</p>
 
@@ -108,10 +111,10 @@
         </p>
     </div>
 
-    <div class="card reveal">
+    <div class="card reveal delay-2">
         <h3>
             Content Head — CESA (Computer Engineering Student Association)<br>
-            <span style="font-weight: 500; font-size: 0.95rem; color: #6f4e37;">
+            <span style="font-weight: 500; font-size: 0.95rem; opacity: 0.8;">
                 Indus University
             </span>
         </h3>
@@ -134,7 +137,7 @@
     </h2>
 
     <!-- SSH HONEYPOT -->
-    <div class="project reveal">
+    <div class="project reveal delay-1">
         <div class="project-icon">
             <i class="fas fa-terminal"></i>
         </div>
@@ -159,7 +162,7 @@
     </div>
 
     <!-- DOS -->
-    <div class="project reveal">
+    <div class="project reveal delay-2">
         <div class="project-icon">
             <i class="fas fa-bolt"></i>
         </div>
@@ -183,7 +186,7 @@
     </div>
 
     <!-- ML PROJECT -->
-    <div class="project reveal">
+    <div class="project reveal delay-3">
         <div class="project-icon">
             <i class="fas fa-chart-line"></i>
         </div>
@@ -207,7 +210,7 @@
     </div>
 
     <!-- BRUTE FORCE -->
-    <div class="project reveal">
+    <div class="project reveal delay-4">
         <div class="project-icon">
             <i class="fas fa-key"></i>
         </div>
@@ -240,26 +243,29 @@
         Skills
     </h2>
 
-    <div class="skill-group reveal">
+    <div class="skill-group reveal delay-1">
         <h3>Cybersecurity</h3>
         <p>Kali Linux, Wireshark, Metasploit, Nmap, VMware</p>
     </div>
 
-    <div class="skill-group reveal">
+    <div class="skill-group reveal delay-2">
         <h3>AI & Data</h3>
         <p>pandas, NumPy, scikit-learn, Matplotlib, Seaborn</p>
     </div>
 
-    <div class="skill-group reveal">
+    <div class="skill-group reveal delay-3">
         <h3>Programming & Backend</h3>
-        <p>Python, Bash, PowerShell, Flask</p>
+        <p>Python, Flask, Bash, PowerShell</p>
+    </div>
+
+    <div class="skill-group reveal delay-4">
+        <h3>Tools & Workflow</h3>
+        <p>Git, GitHub, SQL, Excel</p>
     </div>
 </section>
 
-<div class="section-divider"></div>
-
 <!-- RESUME -->
-<section id="resume" class="section reveal">
+<section id="resume" class="section reveal delay-1">
     <h2 class="section-title">
         <i class="fas fa-file-lines"></i>
         Resume
@@ -278,7 +284,7 @@
 <div class="section-divider"></div>
 
 <!-- CONTACT -->
-<section id="contact" class="section reveal">
+<section id="contact" class="section reveal delay-1">
     <h2 class="section-title">
         <i class="fas fa-envelope-open-text"></i>
         Contact
@@ -306,33 +312,25 @@
     <p>© 2026 Kirnavi Bhavsar</p>
 </footer>
 
-<!-- SCROLL REVEAL -->
+<!-- SCROLL + HEADER SHRINK -->
 <script>
     const reveals = document.querySelectorAll('.reveal');
+    const header = document.querySelector('header');
 
     function revealOnScroll() {
         reveals.forEach(el => {
             const rect = el.getBoundingClientRect();
-
-            // Fade IN
-            if (rect.top < window.innerHeight - 120 && rect.bottom > 120) {
+            if (rect.top < window.innerHeight - 120) {
                 el.classList.add('active');
-                el.classList.remove('fade-out');
-            }
-            // Fade OUT when above viewport
-            else if (rect.bottom < 120) {
-                el.classList.remove('active');
-                el.classList.add('fade-out');
-            }
-            // Reset when below viewport
-            else {
-                el.classList.remove('active');
-                el.classList.remove('fade-out');
             }
         });
     }
 
-    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('scroll', () => {
+        revealOnScroll();
+        header.classList.toggle('shrink', window.scrollY > 80);
+    });
+
     revealOnScroll();
 </script>
 
