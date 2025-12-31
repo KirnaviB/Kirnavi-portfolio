@@ -6,7 +6,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ===== ROOT COLORS (DARK THEME) ===== */
+/* ===== DEFAULT THEME (BLUE-GRAY | ENTERPRISE SAFE) ===== */
 :root {
     --bg-main: #0f1115;
     --bg-soft: #151820;
@@ -15,9 +15,16 @@
     --text-main: #e6e6e6;
     --text-muted: #b6b6b6;
 
+    --accent-main: #7da1c4;
+    --accent-soft: #9bb6d3;
+
+    --border-soft: #2a2f3a;
+}
+
+/* ===== OPTIONAL BROWN THEME ===== */
+[data-theme="brown"] {
     --accent-main: #9c6b43;
     --accent-soft: #b07c50;
-    --border-soft: #2a2f3a;
 }
 
 /* ===== BODY ===== */
@@ -58,7 +65,7 @@ header {
     transition: padding 0.3s ease, background-color 0.3s ease;
 }
 
-/* (Optional future JS hook) */
+/* Header shrink */
 header.shrink {
     padding: 10px 10%;
     background-color: rgba(21, 24, 32, 0.95);
@@ -67,11 +74,14 @@ header.shrink {
 
 /* ===== LOGO ===== */
 .logo {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     color: var(--accent-main);
-    font-size: 3rem;
-    font-weight: 900;
-    letter-spacing: 1.5px;
-    transition: letter-spacing 0.35s ease, color 0.35s ease;
+    font-size: 3.1rem;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    transition: 
+        letter-spacing 0.35s ease,
+        color 0.35s ease;
     cursor: default;
 }
 
@@ -153,7 +163,7 @@ nav a:hover::after {
 .hero-buttons a:hover {
     background-color: var(--accent-main);
     color: #fff;
-    box-shadow: 0 10px 25px rgba(156, 107, 67, 0.35);
+    box-shadow: 0 10px 25px rgba(125, 161, 196, 0.35);
     transform: translateY(-3px);
 }
 
@@ -179,7 +189,7 @@ nav a:hover::after {
     background-color: var(--bg-soft);
 }
 
-/* ===== SECTION TITLES (STATIC & CLEAN) ===== */
+/* ===== SECTION TITLES ===== */
 .section-title {
     font-size: 2rem;
     display: inline-flex;
@@ -228,7 +238,7 @@ nav a:hover::after {
     color: var(--accent-soft);
 }
 
-/* ===== PROJECT ICON (ONLY INTERACTIVE ELEMENT) ===== */
+/* ===== PROJECT ICON ===== */
 .project-icon {
     font-size: 2.2rem;
     color: var(--accent-main);
@@ -244,7 +254,7 @@ nav a:hover::after {
 .skill-group {
     margin-bottom: 28px;
     padding-left: 12px;
-    border-left: 3px solid rgba(156, 107, 67, 0.35);
+    border-left: 3px solid rgba(125, 161, 196, 0.35);
 }
 
 /* ===== CONTACT ===== */
@@ -268,19 +278,22 @@ footer {
 /* ===== SCROLL REVEAL ===== */
 .reveal {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(40px);
+    transition:
+        opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1),
+        transform 0.8s cubic-bezier(0.19, 1, 0.22, 1),
+        filter 0.6s ease;
 }
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
-    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .fade-out {
-    opacity: 0.25;
-    transform: translateY(-20px) scale(0.98);
-    filter: blur(1px);
+    opacity: 0.15;
+    transform: translateY(-25px) scale(0.97);
+    filter: blur(1.2px);
 }
 
 /* ===== RESPONSIVE ===== */
