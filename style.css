@@ -121,8 +121,89 @@ nav a:hover::after {
 
 /* ===== HERO ===== */
 .hero {
-    padding: 90px 10%;
-    text-align: center;
+    position: relative;
+    min-height: calc(100vh - 80px);
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   /* CENTER horizontally */
+    text-align: center;    /* CENTER text */
+    overflow: hidden;
+}
+
+/* ===== HERO AMBIENT ICONS ===== */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-ambient {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-ambient i {
+    position: absolute;
+    font-size: 3.2rem;              /* BIGGER */
+    color: var(--accent-main);
+    opacity: 0.14;                  /* MORE visible */
+    animation: float 22s ease-in-out infinite;
+}
+
+.hero-ambient i:nth-child(1) { top: 15%; left: 10%; animation-duration: 26s; }
+.hero-ambient i:nth-child(2) { top: 70%; left: 15%; animation-duration: 30s; }
+.hero-ambient i:nth-child(3) { top: 30%; left: 80%; animation-duration: 28s; }
+.hero-ambient i:nth-child(4) { top: 75%; left: 75%; animation-duration: 34s; }
+.hero-ambient i:nth-child(5) { top: 50%; left: 50%; animation-duration: 32s; }
+.hero-ambient i:nth-child(6) { top: 20%; left: 55%; animation-duration: 27s; }
+.hero-ambient i:nth-child(7) { top: 60%; left: 35%; animation-duration: 29s; }
+.hero-ambient i:nth-child(8) { top: 40%; left: 20%; animation-duration: 31s; }
+
+
+/* Floating animation */
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-50px) translateX(30px);
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+/* Ensure hero text stays above icons */
+.hero > *:not(.hero-ambient) {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== HERO INTRO STYLE  ===== */
+.hero-intro {
+    color: var(--accent-main);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.hero-name {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 3.6rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.hero-tagline {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 25px;
 }
 
 .hero-visual {
@@ -132,11 +213,6 @@ nav a:hover::after {
     font-size: 2.4rem;
     color: var(--accent-main);
     margin-bottom: 25px;
-}
-
-.hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 10px;
 }
 
 .hero p,
