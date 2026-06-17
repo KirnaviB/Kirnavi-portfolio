@@ -333,6 +333,30 @@ nav a:hover::after {
     border-left: 3px solid rgba(125, 161, 196, 0.35);
 }
 
+/* ===== SKILL CHIPS ===== */
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.chips span {
+    background: rgba(125, 161, 196, 0.15);
+    border: 1px solid rgba(125, 161, 196, 0.3);
+    color: var(--text-main);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    transition: all 0.25s ease;
+}
+
+.chips span:hover {
+    background: rgba(125, 161, 196, 0.25);
+    transform: translateY(-2px);
+}
+
 /* ===== CONTACT ===== */
 #contact a {
     color: var(--accent-main);
