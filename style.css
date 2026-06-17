@@ -336,27 +336,18 @@ nav a:hover::after {
 /* ===== SKILL CHIPS ===== */
 
 .chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
+    margin-top: 8px;
+    color: var(--text-muted);
+    line-height: 1.8;
 }
 
-.chips span {
-    background: rgba(125, 161, 196, 0.15);
-    border: 1px solid rgba(125, 161, 196, 0.3);
-    color: var(--text-main);
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    transition: all 0.25s ease;
+.chips span::after {
+    content: ", ";
 }
 
-.chips span:hover {
-    background: rgba(125, 161, 196, 0.25);
-    transform: translateY(-2px);
+.chips span:last-child::after {
+    content: "";
 }
-
 /* ===== CONTACT ===== */
 #contact a {
     color: var(--accent-main);
