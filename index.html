@@ -34,17 +34,20 @@
         <i class="fas fa-lock"></i>
     </div>
 
-    <h1>AI Software Engineer<br>Building Intelligent AI & Automation Systems</h1>
+    <p class="hero-intro">Hi, my name is</p>
 
+    <h1 class="hero-name">
+        Kirnavi Bhavsar
+    </h1>
+    
+    <h2 class="hero-tagline">
+        AI Software Engineer | Generative AI | RAG Systems
+    </h2>
+    
     <p>
         Hands-on experience in Generative AI, Conversational AI,
         Retrieval-Augmented Generation (RAG), Machine Learning,
         and Full-Stack Development.
-    </p>
-
-    <p class="hero-sub">
-        Focused on building scalable AI-powered applications,
-        business automation systems, and intelligent decision-support platforms.
     </p>
 
     <div class="hero-buttons">
@@ -285,17 +288,24 @@
 
 <script>
 const reveals = document.querySelectorAll('.reveal');
+const header = document.querySelector('header');
 
 function revealOnScroll() {
     reveals.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-        if (elementTop < window.innerHeight - 100) {
+        const rect = el.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (rect.top < windowHeight * 0.85) {
             el.classList.add('active');
         }
     });
 }
 
-window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('scroll', () => {
+    revealOnScroll();
+    header.classList.toggle('shrink', window.scrollY > 80);
+});
+
 revealOnScroll();
 </script>
 
